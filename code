@@ -1,0 +1,61 @@
+// inspired by: https://www.youtube.com/watch?v=EOfCEhWq8sg
+
+package com.example.mysecondapp
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
+import android.widget.TextView
+import kotlin.random.Random
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        //setSupportActionBar(findViewById(R.id.toolbar))
+        val rollButton = findViewById<Button>(R.id.rollButton)
+        val textView = findViewById<TextView>(R.id.textView)
+
+        rollButton.setOnClickListener{
+            val rand = Random.nextInt(1, 9)
+            when (rand) {
+                1 -> {
+                    val tulemus = "Mine jalutama"
+                    textView.text = tulemus.toString()
+                }
+                2 -> {
+                    val tulemus = "Mediteeri"
+                    textView.text = tulemus.toString()
+
+                }
+                3 -> {
+                    val tulemus = "Vaata videot"
+                    textView.text = tulemus.toString()
+
+                }
+                4 -> {
+                    val tulemus = "Käsitöö"
+                    textView.text = tulemus.toString()
+
+                }
+                5 -> {
+                    val tulemus = "Kutsu keegi õue."
+                    textView.text = tulemus.toString()
+                }
+                6 -> {
+                    val tulemus = "Mängi lauamängu."
+                    textView.text = tulemus.toString()
+                }
+                7 -> {
+                    val tulemus = "Helista vanaemale."
+                    textView.text = tulemus.toString()
+                }
+                8 -> {
+                    val tulemus = "Tee oma lemmikjoogapoosi."
+                    textView.text = tulemus.toString()
+                }
+            }
+        }
+    }
+}
